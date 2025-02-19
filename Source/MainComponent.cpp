@@ -31,6 +31,7 @@ MainComponent::MainComponent()
 
 MainComponent::~MainComponent()
 {
+    serial.closeDevice();
 }
 
 char MainComponent::openDevice()
@@ -61,17 +62,17 @@ void MainComponent::resized()
 //==============================================================================
 void MainComponent::timerCallback()
 {
-    // Create the string
-    char buffer[15] = "hello\n";
+    char buffer[9] = "r";
 
-//    // Write the string on the serial device
-//    serial.writeString(buffer);
-//    DBG(juce::String(buffer));
+    // Write the string on the serial device
+    serial.writeString(buffer);
 
     // Read the string
-    int readError = serial.readString(buffer, '\n', 20, 2000);
+    int readError = serial.readString(buffer, '\r', 9, 1);
     if (readError > 0 )
         DBG(juce::String(buffer));
+    else if (readError == 0)
+        return;  // do nothing
     else
         DBG("Error Reading. Error code: " << readError);
 }
