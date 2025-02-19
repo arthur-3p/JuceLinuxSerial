@@ -3,6 +3,12 @@
 <JUCERPROJECT id="VXgtQs" name="LinuxSerial" projectType="guiapp" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="J9uRr7" name="LinuxSerial">
+    <GROUP id="{C0EC4B98-7060-DFB5-FB7A-8C88FDA20FB7}" name="serialib">
+      <GROUP id="{B5C23BDD-740F-2214-6C6D-6D32C7968CCD}" name="lib">
+        <FILE id="sVrwsJ" name="serialib.cpp" compile="1" resource="0" file="serialib/lib/serialib.cpp"/>
+        <FILE id="Hv7qCB" name="serialib.h" compile="0" resource="0" file="serialib/lib/serialib.h"/>
+      </GROUP>
+    </GROUP>
     <GROUP id="{D211F17A-773B-8F67-444F-EA600FE11B96}" name="Source">
       <FILE id="SSJX2I" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="z64Ajc" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
